@@ -4,17 +4,18 @@ import android.os.Parcel
 import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.listproject.databinding.ExampleAdapterBinding
-import androidx.recyclerview.widget.RecyclerView as RecyclerView1
 
-class ExampleRecyclerAdapter() : RecyclerView1.Adapter<ExampleRecyclerAdapter.ExampleViewHolder>() {
+
+class ExampleRecyclerAdapter() : RecyclerView.Adapter<ExampleRecyclerAdapter.ExampleViewHolder>() {
     private val adapterList = mutableListOf<Product>()
 
     inner class ExampleViewHolder(private var binding: ExampleAdapterBinding) :
-        RecyclerView1.ViewHolder(binding.root) {
+        RecyclerView.ViewHolder(binding.root) {
         fun onBind(item: Product) {
             binding.TvProductTitle.text = item.title
-            binding.TvProductPrice.text = item.price.toString()
+            binding.TvProductPrice.text = item.number.toString()
         }
     }
 

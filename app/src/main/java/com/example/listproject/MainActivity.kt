@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.listproject.databinding.ActivityMainBinding
+import com.example.listproject.databinding.ExampleAdapterBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -16,10 +17,14 @@ class MainActivity : AppCompatActivity() {
 
 //create 20 products Product(title:"Parrot", price = 100)
         //create adapter and submit list of products
-        val listOfProducts = listOf<Product>(Product(title = "Apple", price = 100)); Product(
-            title = "Banana", price = 100); Product(title = "Banana", price = 100); (Product(title = "Orange", price = 100))
-val adapter = ExampleRecyclerAdapter()
-        binding.rcProducts.adapter = adapter
-        adapter.submitList(listOfProducts)
+        val listOfProducts = listOf<Product>(
+            Product(title = "Tommas", number = 20),
+            Product(title = "Sylus", number = 15),
+            Product(title = "Xavier", number = 7),
+            Product(title = "Zayne", number = 9)
+        )
+        val adapterExample = ExampleRecyclerAdapter()
+        binding.rcProducts.adapter = adapterExample
+        adapterExample.submitList(listOfProducts)
     }
 }
